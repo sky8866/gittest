@@ -3,7 +3,7 @@
  * @File        JedisClusterFactory.java 
  * @Package     com.soshare.common 
  * @Version     V1.0 
- * @Date        2015骞�10鏈�29鏃� 涓嬪崍12:32:23 
+ * @Date        2015楠烇拷10閺堬拷29閺冿拷 娑撳宕�12:32:23 
  * @Author      luoyang
  */
 
@@ -26,6 +26,10 @@ import redis.clients.jedis.JedisCluster;
 public class JedisClusterFactory implements FactoryBean<JedisCluster>,
         InitializingBean {
     
+	
+	/**
+	 * 
+	 */
     private Resource addressConfig;
     
     private String addressKeyPrefix;
@@ -70,7 +74,7 @@ public class JedisClusterFactory implements FactoryBean<JedisCluster>,
                 boolean isIpPort = p.matcher(val).matches();
                 
                 if (!isIpPort) {
-                    throw new IllegalArgumentException("ip 鎴� port 涓嶅悎娉�");
+                    throw new IllegalArgumentException("ip 閹达拷 port 娑撳秴鎮庡▔锟�");
                 }
                 String[] ipAndPort = val.split(":");
                 
@@ -85,7 +89,7 @@ public class JedisClusterFactory implements FactoryBean<JedisCluster>,
             throw ex;
         }
         catch (Exception ex) {
-            throw new Exception("瑙ｆ瀽 jedis 閰嶇疆鏂囦欢澶辫触", ex);
+            throw new Exception("鐟欙絾鐎� jedis 闁板秶鐤嗛弬鍥︽婢惰精瑙�", ex);
         }
     }
     
